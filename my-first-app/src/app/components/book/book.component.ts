@@ -14,7 +14,7 @@ export class BookComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.route.snapshot.params.id;
-    this.firebaseService.getBookDetails(this.id).valueChanges().subscribe(book => {
+    this.firebaseService.getBookDetails(this.id).subscribe(book => {
       console.log('Book details' + JSON.stringify(book));
     });
   }

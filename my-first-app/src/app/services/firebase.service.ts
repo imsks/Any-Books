@@ -11,9 +11,9 @@ export class FirebaseService {
   favoriteBooks: Observable<any[]>;
   unreadBooks: Observable<any[]>;
   bookDetails: Observable<any[]>;
+  filteredBook: unknown;
 
   constructor(private db: AngularFireDatabase) { }
-
   getBooks() {
     this.books = this.db.list('/books').snapshotChanges().pipe(map(oneBook => {
       const book = oneBook;
@@ -56,8 +56,7 @@ export class FirebaseService {
   }
 
   addBook(bookDetails) {
-    // tslint:disable-next-line: prefer-const
-    let filteredBook = JSON.parse(JSON.stringify(bookDetails));
-    return this.books.push(filteredBook);
+    const filteredBook = JSON.parse(JSON.stringify(bookDetails));
+    return this.db.list('/books').push(this.filteredBook);
   }
 }

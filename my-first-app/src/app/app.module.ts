@@ -29,7 +29,7 @@ import {
   MatTabsModule,
   MatListModule,
   MatIconModule,
-  MatFormFieldModule,
+  MatFormFieldModule, MatDatepickerInput,
 } from '@angular/material';
 
 // Routes

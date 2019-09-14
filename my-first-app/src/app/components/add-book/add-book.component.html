@@ -19,7 +19,7 @@
                 <mat-datepicker #dateadded (selectedChanged)="updateDateAdded($event)"></mat-datepicker>
         </mat-form-field><br>
         <mat-form-field class="full-width">
-            <input matInput [matDatepicker]="dateread" placeholder="Date Read ">
+            <input matInput [matDatepicker]="dateread" placeholder="Date Read">
             <mat-datepicker-toggle matSuffix [for] = "dateread"></mat-datepicker-toggle>
             <mat-datepicker #dateread (selectedChanged)="updateDateRead($event)"></mat-datepicker>
         </mat-form-field><br>
